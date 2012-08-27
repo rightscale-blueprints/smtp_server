@@ -34,11 +34,16 @@ cookbook 'postfix',
   :git => 'https://github.com/flaccid/postfix',
   :ref => 'master'
 
-# currently using un-pushed flaccid fork
-#cookbook 'collectd',
-#  :git => 'https://github.com/coderanger/chef-collectd',
-#  :ref => 'master'
+# currently using flaccid's fork until https://github.com/coderanger/chef-collectd/pull/4 is processed
+cookbook 'collectd',
+  :git => 'https://github.com/flaccid/chef-collectd',
+  :ref => 'master'
 
 cookbook 'collectd_plugins',
   :git => 'https://github.com/coderanger/chef-collectd_plugins',
   :ref => 'master'
+  
+cookbook 'sys_dns',
+   :git => 'https://github.com/rightscale/rightscale_cookbooks',
+   :path => 'cookbooks/sys_dns',
+   :ref => 'master'

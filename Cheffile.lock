@@ -1,7 +1,7 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    collectd (1.0.0)
+    apache2 (1.1.12)
 
 GIT
   remote: https://github.com/coderanger/chef-collectd_plugins
@@ -10,6 +10,14 @@ GIT
   specs:
     collectd_plugins (1.0.0)
       collectd (>= 0.0.0)
+
+GIT
+  remote: https://github.com/flaccid/chef-collectd
+  ref: master
+  sha: c3365623f7cb2beaddc9de296a62c42680260298
+  specs:
+    collectd (1.0.0)
+      apache2 (>= 0.0.0)
 
 GIT
   remote: https://github.com/flaccid/cookbooks
@@ -65,7 +73,17 @@ GIT
   specs:
     sudo (1.1.1)
 
+GIT
+  remote: https://github.com/rightscale/rightscale_cookbooks
+  path: cookbooks/sys_dns
+  ref: master
+  sha: fd970f4caa683a0e1b9217686fa1721fbafbf3b7
+  specs:
+    sys_dns (12.1.0)
+      rightscale (>= 0.0.0)
+
 DEPENDENCIES
+  collectd (>= 0)
   collectd_plugins (>= 0)
   cron (>= 0)
   ntp (>= 0)
@@ -73,5 +91,6 @@ DEPENDENCIES
   resolver (>= 0)
   rightscale (>= 0)
   sudo (>= 0)
+  sys_dns (>= 0)
   system (>= 0)
 
